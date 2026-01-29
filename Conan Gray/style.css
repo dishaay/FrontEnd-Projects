@@ -1,0 +1,159 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  font-family: Helvetica, sans-serif;
+}
+
+html,body{
+  height:100%;
+  width:100%;
+}
+
+#nav{
+  display:flex; 
+  align-items: center;
+  justify-content: space-between;
+  padding:35px;
+  font-size:18px;
+  background-color: #212842;
+  color:white;
+  font-weight:550;
+}
+
+#navpart1{
+  width:35%;
+  display:flex;
+  justify-content: space-between;
+}
+
+#navpart2{
+  width:35%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#about{
+  margin-top:100px;
+  padding-left:35px;
+  margin-bottom:100px;
+}
+
+#about h3{
+  font-size:30px;
+  padding-left:15px;
+}
+
+#about h1{
+  word-spacing: 7px;
+  letter-spacing: -8px;
+  font-weight:540;
+  padding-top:25px;
+  font-size:125px;
+}
+
+#albums{
+  margin-top:50px;
+  display:flex; 
+  justify-content: space-between;
+  padding:45px;
+  font-size:23px;
+  font-weight:450;
+}
+
+#album-left{
+  padding-left:25px;
+}
+#album-right{
+  width:35%;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap:30px;
+}
+
+#line{
+  height:3px;
+  width:300px;
+  background-color: black;
+}
+
+#photos, #photos2{
+  display:flex;
+  justify-content: space-between;
+  padding: 0px 100px 0px 55px;
+  gap:45px;
+}
+
+#fotos{
+  width:50%;
+  height:100%;
+}
+
+.foto1{
+  border-radius:15px;
+  width:650px;
+  height:680px;
+  background-color: aqua;
+  background-size:cover;
+}
+
+
+.foto1{
+  display:flex;
+  justify-content: space-between;
+}
+
+.infos{
+  padding-top:35px;
+  display:flex;
+  justify-content: space-between;
+  font-size:22px; 
+  align-items: flex-start;
+}
+
+.infos i{
+  border:black 2px solid;
+  padding:18px 28px;
+  border-radius:28px;
+  margin-top:10px;
+}
+
+.infos i:hover{
+  background-color:black; 
+  color:white;
+}
+
+.info2{
+  margin-top:10px;
+}
+
+#kidkrow{
+  background-image: url(https://i.pinimg.com/736x/9a/60/b3/9a60b3b739f0856128e8d2edff8024ea.jpg);
+}
+
+#memories{
+  background-image:url(https://i.pinimg.com/736x/24/49/c6/2449c63f0a301ecc413904f7381c8fdf.jpg);
+}
+
+.info1 p{
+  color:rgb(66, 66, 66);
+  padding-top:2px;
+}
+
+#photos2{
+  margin-top:60px;
+}
+
+#found{
+  background-image: url(https://i.pinimg.com/736x/34/49/81/344981f11317eef9189c3f8b1b06ab70.jpg);
+}
+
+#WishBone{
+  background-image: url(https://i.pinimg.com/1200x/91/c2/d8/91c2d82553ee04f6d1b529e39bfa8ea7.jpg);
+}
+
+#main{
+  background-color: #F0E7D5;;
+}

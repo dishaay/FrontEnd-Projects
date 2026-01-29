@@ -1,0 +1,145 @@
+*{
+  box-sizing:border-box; 
+  padding:0;
+  margin:0;
+  font-family: Helvetica, sans-serif;
+}
+
+html,body{
+  height:100%;
+  width: 100%;
+}
+
+#main{
+  height:100%; 
+  width:100%;
+}
+
+#nav{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  padding:40px 60px;
+}
+
+#navpart2{
+  display:flex; 
+  justify-content: space-between;
+  width:65%;
+}
+
+#navpart1{
+  display:flex; 
+  justify-content: space-between;
+  width:35%;
+  margin-right:56px;
+}
+
+#nav h3, #nav h2, #nav h4{
+  font-size:20px;
+  font-weight:600;
+}
+
+#content{
+  padding: 40px 65px;
+  margin-top:30px;
+}
+
+#content h3{
+  font-size:40px;
+  font-weight:600;
+}
+
+#content h1{
+  font-size:165px;
+  line-height:158px;
+  letter-spacing: -9px;
+  font-weight:500;
+  word-spacing: 12px;
+}
+
+#case{
+  padding: 40px 65px;
+  margin-top:30px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#case h4, #case h5{
+  font-size:26px;
+  font-weight:500;
+}
+
+#right{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+#line{
+  height:2px;
+  width:400px;
+  background-color: black;
+}
+
+#albums{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:35px 65px;
+  gap:80px;
+}
+
+.elem{
+  width:50%;
+}
+
+.elem-img{
+  height:770px;
+  background-color: antiquewhite;
+  width:100%;
+  border-radius:30px;
+  background-size: cover;
+  background-position:center;
+}
+
+#img1{
+  background-image: url(https://i.pinimg.com/736x/e4/ee/05/e4ee05c6f331d71076e63f8cb145b884.jpg);
+}
+
+#img2{
+  background-image: url(https://i.pinimg.com/1200x/60/91/b7/6091b79be9d0ace8859226e02e94ab32.jpg);
+}
+
+.bottom{
+  display:flex; 
+  align-items: center;
+  justify-content: space-between;
+  padding:15px;
+}
+
+.bottom i{
+  padding:15px 30px; 
+  font-size:20px;
+  border: 2px solid black;
+  border-radius:50px;
+  font-weight:800;
+}
+
+.bottom i:hover{
+  background-color: black;
+  color:white;
+}
+
+.bottom h2{
+  font-size:40px; 
+  font-weight:500;
+  margin-bottom:10px;
+}
+
+.bottom h4{
+  font-size:25px;
+  color:rgb(83, 79, 79);
+  font-weight:500;
+}

@@ -1,0 +1,170 @@
+*{
+  box-sizing:border-box;
+  padding:0;
+  margin:0;
+  font-family: Helvetica, sans-serif;
+}
+
+html,body{
+  height:100%;
+  width:100%;
+}
+
+#main{
+  height:100%;
+  width:100%;
+}
+
+#intro{
+  height:45%;
+  width:100%;
+}
+
+#intro h1{
+  font-size:125px;
+  line-height: 120px; /*line height font ke barabar hi rehti hai usually*/
+  padding:30px;
+  margin:none;
+  letter-spacing: -8px;
+}
+
+#place{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: none;
+  padding:0px 30px 0px 30px;
+}
+
+#place h3,#place h4{
+  font-size:28px;
+  font-weight:600;
+}
+
+#clara img{
+  width:100%;
+  height:70%;
+  background-color: black;
+}
+
+#nav{
+  display:flex;
+  position:fixed;
+  width:100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+#nav h3{
+  background-color: black;
+  padding:15px 20px; /*top-bottom and left-right */
+  color:white;
+  margin:5px;
+  border-radius:50px;
+  font-size:20px;
+}
+
+#about{
+  height:50%; 
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 60px;
+  margin-bottom: none;
+}
+
+#about-part2{
+  display:flex; /*hume toh pata hai ki flex se humara jo bhi content hai woh row and column mei divide ho jaata hai toh abhi hum specifically humare content ko column mei divide karne mei focus karege, dekhte hai kaise */
+  flex-direction: column;
+  justify-content: space-between;
+  width:30%;
+  height:100%;
+  padding:0px 35px;
+  font-size:23px;
+  font-weight:500;
+  border-left: 2px black solid;
+}
+
+#about h2{ 
+  width:66%;
+  font-size:70px;
+  line-height: 80px;
+  letter-spacing: -3px;
+  font-weight:500;
+  padding:20px 30px;
+}
+
+#about i{
+  background-color: black;
+  color:white;
+  font-size:23px;
+  padding:8px;
+  border-radius: 50px;
+  margin-right:10px;
+}
+
+#work{
+  height:45%;
+  border-top:2px solid black;
+  width:100%;
+  display:flex;
+  padding-top:30px;
+}
+
+#work1{
+  padding-left:80px;
+  width:35%;
+  height:95%;
+  border-right:2px solid black;
+  display:flex;
+  justify-content: space-between;
+  font-size:25px;
+  padding-right:15px;
+}
+#work1 i{
+  font-size:28px;
+}
+#work2{
+  width:65%;
+  height:100%;
+  padding:0 60px;
+  margin-top:15px;
+
+}
+
+.work2-part:nth-child(1){
+  padding-top:0;
+  border-bottom:2px solid black;
+}
+
+.work2-part{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:40px 0px;
+}
+
+.elem{
+  width:50%;
+  height:100%;
+}
+
+.elem:nth-child(1){
+  border-right:2px solid black;
+}
+
+.elem:nth-child(2){
+  padding-left:15px;
+}
+
+.elem h3{
+  font-size:30px;
+  margin-bottom:5px;
+}
+
+.elem p{
+  font-size:15px;
+  color:rgb(61, 60, 60);
+}
