@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>events and event handling</title>
+
+  <style>
+    h3{
+      text-transform:capitalize;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      font-family:"helvetica";
+      box-sizing:border-box;
+      /* background-color: #45151B; */
+      color:black;
+    }
+
+    html,body{
+      width:100%;
+      height:100%;
+    }
+
+    #main{
+      align-items:center;
+    }
+
+    #file{
+      display:none;
+    }
+
+    #fileselected{
+      margin:10%;
+      padding: 5px 35px;
+      font-size:30px;
+      background-color:bisque;
+      color:black;
+      border-radius:10px;
+    }
+
+    #fileselected:hover{
+      background-color:black;
+      color:blanchedalmond;
+    }
+    
+    body{
+      overflow:hidden;
+      position:relative;
+    } /*taaki jo mera div hai woh screen ke bahar nahi jaaye */ 
+    
+    .abcd{
+      margin-top:10px;
+      height:100px;
+      width:100px;
+      background-color: red;
+      /* position:absolute; */
+      /* transition:all cubic-bezier(0.19, 1, 0.22, 1); */
+    }
+
+    ul{
+      padding:5px 25px;     
+    }
+
+    .lt{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="h1">total characters:</h1>
+  <input type="text" placeholder="name">
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet quae unde voluptatibus mollitia culpa fugiat?</p>
+
+  <h3 id="device"> Select your device.</h3>
+  <select>
+    <option selected disabled>Choose your device</option> //selected hai but disabled ke vajah se aap usko choose nahi kar sakte.
+    <option value="android"> Android</option>
+    <option value="apple"> apple </option>
+
+  </select>
+
+  <h1>D</h1>
+
+  <input type="file" id="file">
+  <button id="fileselected"> Upload yo file.</button>
+
+  <!--working with forms ka submit button.-->
+
+  <form action="" id="form">
+    <input type="text" placeholder="name">
+    <input type="text" placeholder="email">
+    <input type="text" placeholder="profile pic">
+    <input type="submit" placeholder="submit">
+
+  </form>
+
+  <div class="abcd"></div>
+
+  <ul>
+    <li>apple</li>
+    <li>mango</li>
+    <li>grapes</li>
+    <li>guava</li>
+    <li>banana</li>
+  </ul>
+  <script src="script.js"></script>
+</body>
+</html>

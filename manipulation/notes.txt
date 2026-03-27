@@ -1,0 +1,24 @@
+hello this is where i will make all of my notes. 
+
+basically when i want to select anything from our webpage we use querySelector or queryAllSelector. 
+
+tag ke alawa jo likha hai woh mera attribute hota hai 
+
+html lang- this is my attribute.
+
+getAttribute- attribute ki value leni hai. 
+
+setAttribute- uski value set karni hai 
+
+removeAttribute- woh attribute ko remove karna hai 
+
+dynamic dom manipulation: 
+  1.createElement- html ka jo element nahi hai usse create karna 
+  2.appendChild- ekk element ekk element add kar dena 
+  3.removeChild- ekk element hata dena 
+  4.prepend- element ke start mei ekk element add kar dena. 
+
+
+key point is to keep revising. otherwise you will forget it. keep yourself involved in development. 
+
+style updates via . - js se hum css badal sakte hai.

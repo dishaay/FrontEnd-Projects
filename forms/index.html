@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <form id="form" autocomplete="off">
+      <h2>Login</h2>
+
+      <div class="input-group">
+        <input type="text" id="email" placeholder="Enter Email">
+        <p id="emailError" class="error">Invalid Email</p>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Enter Password">
+        <p id="passError" class="error">Password must be 6+ characters</p>
+      </div>
+
+      <button type="submit">Submit</button>
+
+      <div id="resultMessage">
+        
+      </div>
+    </form>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+this section is the most important section of our js. 
+kuch bhi ho jaaye screen pe ho , woh ekk event hota hai. 
+kuch screen pe ho and aapko reaction dena ho toh uss waqt aapko event handle karna hai. 
+event listener matlab aapne koi action ka reaction dia hai. 
+
+how to do the event handling. 
+
+1.select the paragraph first. 
+2. realize karo para pe hoga kya (click?)
+
+element.addEventListener("event name", function (){ 
+  
+})
+
+
+

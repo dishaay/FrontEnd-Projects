@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Discover</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 32px 80px;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 340px;
+    background: radial-gradient(ellipse, rgba(180,140,90,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 400;
+    color: #f2ede6;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    animation: fadeDown 0.6s ease both;
+  }
+  .heading em { font-style: italic; color: #c9a96e; }
+
+  .sub {
+    font-size: 13px;
+    color: #4a4540;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 36px;
+    animation: fadeDown 0.6s 0.08s ease both;
+  }
+
+  .search-wrap {
+    position: relative;
+    width: min(460px, 100%);
+    margin-bottom: 56px;
+    animation: fadeDown 0.6s 0.16s ease both;
+  }
+
+  .search-wrap svg {
+    position: absolute;
+    left: 16px; top: 50%;
+    transform: translateY(-50%);
+    color: #4a4540;
+    pointer-events: none;
+    transition: color 0.2s;
+  }
+  .search-wrap:focus-within svg { color: #c9a96e; }
+
+  .search-wrap input {
+    width: 100%;
+    padding: 14px 18px 14px 46px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #c8c0b4;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    letter-spacing: 0.02em;
+  }
+  .search-wrap input::placeholder { color: #3d3830; }
+  .search-wrap input:focus {
+    border-color: rgba(201,169,110,0.35);
+    box-shadow: 0 0 0 3px rgba(201,169,110,0.08), 0 8px 28px rgba(0,0,0,0.5);
+  }
+
+  /* ── CHANGED: wrap instead of scroll ── */
+  .cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    width: min(1200px, 100%);
+  }
+
+  .card {
+    position: relative;
+    width: 270px;
+    height: 370px;
+    min-width: 270px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
+                box-shadow 0.4s ease;
+  }
+
+  .card:nth-child(1) { animation: fadeUp 0.55s 0.1s ease both; }
+  .card:nth-child(2) { animation: fadeUp 0.55s 0.2s ease both; }
+  .card:nth-child(3) { animation: fadeUp 0.55s 0.3s ease both; }
+  .card:nth-child(4) { animation: fadeUp 0.55s 0.4s ease both; }
+  .card:nth-child(5) { animation: fadeUp 0.55s 0.5s ease both; }
+  .card:nth-child(6) { animation: fadeUp 0.55s 0.6s ease both; }
+
+  .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,169,110,0.15);
+  }
+
+  .card .bg-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9) saturate(0.85);
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94),
+                filter 0.4s ease;
+  }
+  .card:hover .bg-img {
+    transform: scale(1.08);
+    filter: brightness(0.75) saturate(1.05);
+  }
+
+  .card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 30%,
+      rgba(0,0,0,0.1) 52%,
+      rgba(5,3,2,0.82) 100%
+    );
+    pointer-events: none;
+  }
+
+  .card-num {
+    position: absolute;
+    top: 16px; right: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    z-index: 2;
+    letter-spacing: 0.06em;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 22px 20px;
+    z-index: 2;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 7px;
+    font-weight: 500;
+  }
+
+  .content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 5px;
+  }
+  .sep{
+    color:white; 
+    font-size: 20px;;
+  }
+  .content p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1.55;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+  .card:hover .content p {
+    max-height: 48px;
+    opacity: 1;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+  <p class="sub">Collection</p>
+  <h1 class="heading">Explore the <em>divine</em></h1>
+
+  <div class="search-wrap" id="search">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" placeholder="Search…"/>
+  </div>
+
+  <div class="cards-row">
+
+    <div class="card">
+      <img class="bg-img" src="https://i.pinimg.com/736x/dd/40/46/dd4046133b8118614fc509f2e16d94b2.jpg" alt="Radha ShyamSundar"/>
+      <span class="card-num">01</span>
+      <div class="content">
+        <span class="card-tag">Sacred Art</span>
+        <h3>Sri Radha ShyamSundar</h3>
+        <p>A beautiful painting of Sri Radha and Krishna in eternal union.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

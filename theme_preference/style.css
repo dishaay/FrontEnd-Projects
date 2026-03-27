@@ -1,0 +1,54 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f4f4f4;
+}
+
+body.dark {
+  --bg: #111111;
+  --text: #ffffff;
+  --card: #1e1e1e;
+}
+
+body.light {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: brown;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Light mode button text override */
+body.light button {
+  color: white;
+}

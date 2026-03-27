@@ -1,0 +1,13 @@
+*{
+  color:white;
+  background-color: black;
+  font-family: helvetica;
+}
+
+small{
+  color:red;
+}
+
+#hide{
+  display:none;
+}
